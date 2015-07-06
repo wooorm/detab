@@ -1,0 +1,20 @@
+{
+  "name": "detab",
+  "version": "0.0.0",
+  "description": "Detab: tabs -> spaces",
+  "license": "MIT",
+  "keywords": [
+    "detab",
+    "tab",
+    "space",
+    "tab-size",
+    "size"
+  ],
+  "dependencies": {
+    "jonschlinkert/repeat-string": "^1.5.2"
+  },
+  "repository": "wooorm/detab",
+  "scripts": [
+    "index.js"
+  ]
+}

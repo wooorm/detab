@@ -1,0 +1,16 @@
+language: node_js
+script: npm run-script test-travis
+node_js:
+- '0.10'
+- '0.11'
+- '0.12'
+- iojs
+sudo: false
+after_script: npm install coveralls@2.10.0 && cat ./coverage/lcov.info | coveralls
+deploy:
+  provider: npm
+  email: tituswormer@gmail.com
+  api_key:
+    secure: JUxk8rWWDb3F+RsvCNERj+LqpzWyWY7x0Wx/83OYmsQXUCsCIfxlT0BJ+yh7uen0iNQ9jLVHnSS4m0whbmOF5HjnciyCl9f2/yjXC06oWlnBus1lWs9dhMfxokEMyLupsi9kSGACcn6Twr1/PuGvf/iBxxKE2DCQRgS9iDSOxGVgffyE+OeCOUBu+oB1tCYptLAGJJxPNKSe0xDL430HDTMpu+NuOEy3oK451OaMJrRjmr1dXUC4VdmJLxxaXwweFiDJ+dzJy5dnzWhFUL/HtGroESMyjFXgkroZOsbD8+QUOJ52x2GVbM0vHoPjDA0neiN7Iwv77DpsbYq/bkH9zGHIOk/wpTPCjMeH0yh12FrlsPyzmPGGN3CMl6oUO0Slps7j4hVq6lrsPVgVuXD2kE9Hoa68LT+bWfg0EFeNCin67I5t1oXQTKPf01WyCRaiFM7+Vy61PNxbNclXyZPslZLBrGILgorRjSiLHp4j0TGRwdyVPPwdHuy+1p99HasVhU7bvUtYmrYkHS5zYf4SYevGrKBKKR+uPjsjj3Z6zTdC69FMH2kA33Gz4krFiCfMkHmUDrW2UYRh3tfFSzX3TLnGu80ttpvBSM538vu9Z9UjVieiEdcc4bcrZ41iw3hRSQSXj296v+yVfuPruyPWOuF6Lqe4CHCwN4d4eGp1cQE=
+  on:
+    repo: wooorm/detab
