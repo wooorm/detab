@@ -25,6 +25,7 @@ describe('detab(value, size?)', function () {
         assert.equal(detab('fo\tbar'), 'fo  bar');
         assert.equal(detab('f\tbar'), 'f   bar');
         assert.equal(detab('\tbar'), '    bar');
+        assert.equal(detab('\t\tbar'), '        bar');
     });
 
     it('should support lines', function () {
@@ -39,5 +40,6 @@ describe('detab(value, size?)', function () {
         assert.equal(detab('fo\tbar', 2), 'fo  bar');
         assert.equal(detab('f\tbar', 2), 'f bar');
         assert.equal(detab('\tbar', 2), '  bar');
+        assert.equal(detab('\t\tbar', 2), '    bar');
     });
 });

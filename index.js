@@ -12,6 +12,7 @@ var repeat = require('repeat-string');
 
 var TAB = '\t';
 var NEWLINE = '\n';
+var SPACE = ' ';
 
 /**
  * Replace tabs with spaces, being smart about which
@@ -34,6 +35,7 @@ function detab(value, size) {
     var column = -1;
     var tabSize = size || 4;
     var character;
+    var add;
 
     if (!string) {
         throw new Error('detab expected string');
@@ -44,8 +46,9 @@ function detab(value, size) {
         column++;
 
         if (character === TAB) {
-            column += characters[index];
-            characters[index] = repeat(' ', tabSize - (column % tabSize));
+            add = tabSize - (column % tabSize);
+            characters[index] = repeat(SPACE, add);
+            column += add - 1;
         } else if (character === NEWLINE) {
             column = -1;
         }
