@@ -30,10 +30,10 @@ var SPACE = ' ';
 function detab(value, size) {
     var string = typeof value === 'string';
     var length = string && value.length;
-    var characters = string && value.split('');
     var index = -1;
     var column = -1;
     var tabSize = size || 4;
+    var result = '';
     var character;
     var add;
 
@@ -42,19 +42,25 @@ function detab(value, size) {
     }
 
     while (++index < length) {
-        character = characters[index];
-        column++;
+        character = value.charAt(index);
 
         if (character === TAB) {
-            add = tabSize - (column % tabSize);
-            characters[index] = repeat(SPACE, add);
-            column += add - 1;
-        } else if (character === NEWLINE) {
-            column = -1;
+            add = tabSize - ((column + 1) % tabSize);
+            result += repeat(SPACE, add);
+            column += add;
+            continue;
         }
+
+        if (character === NEWLINE) {
+            column = -1;
+        } else {
+            column++;
+        }
+
+        result += character;
     }
 
-    return characters.join('');
+    return result;
 }
 
 /*
