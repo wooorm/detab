@@ -23,7 +23,7 @@ Dependencies.
 var detab = require('detab');
 ```
 
-Create a normal error and format a string:
+Detab:
 
 ```javascript
 var four = detab('\tfoo\nbar\tbaz');
