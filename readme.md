@@ -1,6 +1,6 @@
-# fault [![Build Status](https://img.shields.io/travis/wooorm/fault.svg?style=flat)](https://travis-ci.org/wooorm/fault) [![Coverage Status](https://img.shields.io/coveralls/wooorm/fault.svg?style=flat)](https://coveralls.io/r/wooorm/fault?branch=master)
+# detab [![Build Status](https://img.shields.io/travis/wooorm/detab.svg?style=flat)](https://travis-ci.org/wooorm/detab) [![Coverage Status](https://img.shields.io/coveralls/wooorm/detab.svg?style=flat)](https://coveralls.io/r/wooorm/detab?branch=master)
 
-Functional errors with formatted output.
+Detab: tabs -> spaces.
 
 ## Installation
 
