@@ -1,70 +1,63 @@
+/**
+ * @author Titus Wormer
+ * @copyright 2015 Titus Wormer
+ * @license MIT
+ * @module detab
+ * @fileoverview Detab: tabs -> spaces.
+ */
+
 'use strict';
 
-/*
- * Dependencies.
- */
+/* Expose. */
+module.exports = detab;
 
+/* Dependencies. */
 var repeat = require('repeat-string');
 
-/*
- * Constants.
- */
-
-var TAB = '\t';
-var NEWLINE = '\n';
-var SPACE = ' ';
+/* Constants. */
+var TAB = 0x09;
+var LF = 0x0a;
+var CR = 0x0d;
 
 /**
  * Replace tabs with spaces, being smart about which
  * column the tab is at and which size should be used.
- *
- * @example
- *   detab('\tfoo\nbar\tbaz'); // '    foo\nbar baz'
- *   detab('\tfoo\nbar\tbaz', 2); // '  foo\nbar baz'
- *   detab('\tfoo\nbar\tbaz', 8); // '        foo\nbar     baz'
  *
  * @param {string} value - Value with tabs.
  * @param {number?} [size=4] - Tab-size.
  * @return {string} - Value without tabs.
  */
 function detab(value, size) {
-    var string = typeof value === 'string';
-    var length = string && value.length;
-    var index = -1;
-    var column = -1;
-    var tabSize = size || 4;
-    var result = '';
-    var character;
-    var add;
+  var string = typeof value === 'string';
+  var length = string && value.length;
+  var start = 0;
+  var index = -1;
+  var column = -1;
+  var tabSize = size || 4;
+  var results = [];
+  var code;
+  var add;
 
-    if (!string) {
-        throw new Error('detab expected string');
+  if (!string) {
+    throw new Error('detab expected string');
+  }
+
+  while (++index < length) {
+    code = value.charCodeAt(index);
+
+    if (code === TAB) {
+      add = tabSize - ((column + 1) % tabSize);
+      column += add;
+      results.push(value.slice(start, index) + repeat(' ', add));
+      start = index + 1;
+    } else if (code === LF || code === CR) {
+      column = -1;
+    } else {
+      column++;
     }
+  }
 
-    while (++index < length) {
-        character = value.charAt(index);
+  results.push(value.slice(start));
 
-        if (character === TAB) {
-            add = tabSize - ((column + 1) % tabSize);
-            result += repeat(SPACE, add);
-            column += add;
-            continue;
-        }
-
-        if (character === NEWLINE) {
-            column = -1;
-        } else {
-            column++;
-        }
-
-        result += character;
-    }
-
-    return result;
+  return results.join('');
 }
-
-/*
- * Expose.
- */
-
-module.exports = detab;

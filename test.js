@@ -1,45 +1,62 @@
+/**
+ * @author Titus Wormer
+ * @copyright 2015 Titus Wormer
+ * @license MIT
+ * @module detab
+ * @fileoverview Test suite for `detab`.
+ */
+
 'use strict';
 
-/* eslint-env mocha */
-
-/*
- * Dependencies.
- */
-
+/* Dependencies. */
+var test = require('tape');
 var detab = require('./');
-var assert = require('assert');
 
-/*
- * Tests.
- */
+/* Tests. */
+test('detab(value[, size])', function (t) {
+  t.throws(
+    function () {
+      detab(true);
+    },
+    /detab expected string/,
+    'should throw when not given a string'
+  );
 
-describe('detab(value, size?)', function () {
-    it('should throw when not given a string', function () {
-        assert.throws(function () {
-            detab(true);
-        }, /detab expected string/);
+  t.test('should work', function (st) {
+    st.equal(detab('foo\tbar'), 'foo bar');
+    st.equal(detab('fo\tbar'), 'fo  bar');
+    st.equal(detab('f\tbar'), 'f   bar');
+    st.equal(detab('\tbar'), '    bar');
+    st.equal(detab('\t\tbar'), '        bar');
+    st.equal(detab('al\t\tbar'), 'al      bar');
+    st.equal(detab('bar\t\t'), 'bar     ');
+    st.end();
+  });
+
+  t.test('should support lines', function (st) {
+    var map = {
+      'LF': '\n',
+      'CR': '\r',
+      'CR+LF': '\r\n'
+    };
+
+    Object.keys(map).forEach(function (name) {
+      var chars = map[name];
+
+      st.test(name, function (sst) {
+        sst.equal(detab('foo' + chars + '\tbar'), 'foo' + chars + '    bar');
+        sst.equal(detab('fo' + chars + '\tbar'), 'fo' + chars + '    bar');
+        sst.equal(detab('f' + chars + '\tbar'), 'f' + chars + '    bar');
+        sst.equal(detab(chars + '\tbar'), chars + '    bar');
+        sst.equal(detab('al\t' + chars + '\tbar'), 'al  ' + chars + '    bar');
+        sst.equal(detab('bar' + chars + '\t'), 'bar' + chars + '    ');
+        sst.equal(detab('bar\t' + chars), 'bar ' + chars);
+        sst.end();
+      });
     });
 
-    it('should work', function () {
-        assert.equal(detab('foo\tbar'), 'foo bar');
-        assert.equal(detab('fo\tbar'), 'fo  bar');
-        assert.equal(detab('f\tbar'), 'f   bar');
-        assert.equal(detab('\tbar'), '    bar');
-        assert.equal(detab('\t\tbar'), '        bar');
-    });
+    st.end();
+  });
 
-    it('should support lines', function () {
-        assert.equal(detab('foo\n\tbar'), 'foo\n    bar');
-        assert.equal(detab('fo\n\tbar'), 'fo\n    bar');
-        assert.equal(detab('f\n\tbar'), 'f\n    bar');
-        assert.equal(detab('\n\tbar'), '\n    bar');
-    });
-
-    it('should accept `size`', function () {
-        assert.equal(detab('foo\tbar', 2), 'foo bar');
-        assert.equal(detab('fo\tbar', 2), 'fo  bar');
-        assert.equal(detab('f\tbar', 2), 'f bar');
-        assert.equal(detab('\tbar', 2), '  bar');
-        assert.equal(detab('\t\tbar', 2), '    bar');
-    });
+  t.end();
 });

@@ -1,19 +1,14 @@
-# detab [![Build Status](https://img.shields.io/travis/wooorm/detab.svg?style=flat)](https://travis-ci.org/wooorm/detab) [![Coverage Status](https://img.shields.io/coveralls/wooorm/detab.svg?style=flat)](https://coveralls.io/r/wooorm/detab?branch=master)
+# detab [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
 
 Detab: tabs -> spaces.
 
 ## Installation
 
-[npm](https://docs.npmjs.com/cli/install):
+[npm][npm-install]:
 
 ```bash
 npm install detab
 ```
-
-**detab** is also available for [bower](http://bower.io/#install-packages),
-[component](https://github.com/componentjs/component), [duo](http://duojs.org/#getting-started),
-and for AMD, CommonJS, and globals ([uncompressed](detab.js) and
-[compressed](detab.min.js)).
 
 ## Usage
 
@@ -50,18 +45,36 @@ bar     baz
 
 ## API
 
-### detab(value\[, size\])
+### `detab(value[, size=4])`
 
 Replace tabs with spaces, being smart about which column the tab is at
 and which size should be used.
 
-Parameters:
+###### Parameters
 
 *   `value` (`string`) — Value with tabs;
 *   `size` (`number`, default: `4`) — Tab-size.
 
-Returns: `string` — Value without tabs
+###### Returns
+
+`string` — Value without tabs
 
 ## License
 
-[MIT](LICENSE) @ [Titus Wormer](http://wooorm.com)
+[MIT][license] © [Titus Wormer][author]
+
+<!-- Definitions -->
+
+[travis-badge]: https://img.shields.io/travis/wooorm/detab.svg
+
+[travis]: https://travis-ci.org/wooorm/detab
+
+[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/detab.svg
+
+[codecov]: https://codecov.io/github/wooorm/detab
+
+[npm-install]: https://docs.npmjs.com/cli/install
+
+[license]: LICENSE
+
+[author]: http://wooorm.com
