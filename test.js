@@ -35,8 +35,8 @@ test('detab(value[, size])', function (t) {
 
   t.test('should support lines', function (st) {
     var map = {
-      'LF': '\n',
-      'CR': '\r',
+      LF: '\n',
+      CR: '\r',
       'CR+LF': '\r\n'
     };
 
