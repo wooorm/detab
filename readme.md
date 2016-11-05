@@ -1,6 +1,6 @@
 # detab [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
 
-Detab: tabs -> spaces.
+Detab: tabs → spaces.
 
 ## Installation
 
