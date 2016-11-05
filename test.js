@@ -1,11 +1,3 @@
-/**
- * @author Titus Wormer
- * @copyright 2015 Titus Wormer
- * @license MIT
- * @module detab
- * @fileoverview Test suite for `detab`.
- */
-
 'use strict';
 
 /* Dependencies. */
