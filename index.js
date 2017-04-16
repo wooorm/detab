@@ -8,8 +8,8 @@ var repeat = require('repeat-string');
 
 /* Constants. */
 var TAB = 0x09;
-var LF = 0x0a;
-var CR = 0x0d;
+var LF = 0x0A;
+var CR = 0x0D;
 
 /**
  * Replace tabs with spaces, being smart about which
