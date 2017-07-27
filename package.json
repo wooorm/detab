@@ -10,18 +10,18 @@
     "tab-size",
     "size"
   ],
+  "repository": "wooorm/detab",
+  "bugs": "https://github.com/wooorm/detab/issues",
+  "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
   "files": [
     "index.js"
   ],
   "dependencies": {
     "repeat-string": "^1.5.4"
   },
-  "repository": "https://github.com/wooorm/detab",
-  "bugs": "https://github.com/wooorm/detab/issues",
-  "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
-  "contributors": [
-    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
-  ],
   "devDependencies": {
     "browserify": "^14.0.0",
     "esmangle": "^1.0.1",
@@ -49,6 +49,8 @@
     ]
   },
   "remarkConfig": {
-    "plugins": ["preset-wooorm"]
+    "plugins": [
+      "preset-wooorm"
+    ]
   }
 }
