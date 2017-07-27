@@ -4,7 +4,7 @@ Detab: tabs → spaces.
 
 ## Installation
 
-[npm][npm-install]:
+[npm][]:
 
 ```bash
 npm install detab
@@ -12,15 +12,9 @@ npm install detab
 
 ## Usage
 
-Dependencies.
-
 ```javascript
 var detab = require('detab');
-```
 
-Detab:
-
-```javascript
 var four = detab('\tfoo\nbar\tbaz');
 var two = detab('\tfoo\nbar\tbaz', 2);
 var eight = detab('\tfoo\nbar\tbaz', 8);
@@ -47,17 +41,8 @@ bar     baz
 
 ### `detab(value[, size=4])`
 
-Replace tabs with spaces, being smart about which column the tab is at
-and which size should be used.
-
-###### Parameters
-
-*   `value` (`string`) — Value with tabs;
-*   `size` (`number`, default: `4`) — Tab-size.
-
-###### Returns
-
-`string` — Value without tabs
+Replace tabs with spaces in `value` (`string`), being smart about which
+column the tab is at and which `size` (`number`, default: `4`) should be used.
 
 ## License
 
@@ -73,7 +58,7 @@ and which size should be used.
 
 [codecov]: https://codecov.io/github/wooorm/detab
 
-[npm-install]: https://docs.npmjs.com/cli/install
+[npm]: https://docs.npmjs.com/cli/install
 
 [license]: LICENSE
 
