@@ -1,10 +1,8 @@
 'use strict';
 
-/* Dependencies. */
 var test = require('tape');
 var detab = require('./');
 
-/* Tests. */
 test('detab(value[, size])', function (t) {
   t.throws(
     function () {

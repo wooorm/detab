@@ -1,24 +1,15 @@
 'use strict';
 
-/* Expose. */
 module.exports = detab;
 
-/* Dependencies. */
 var repeat = require('repeat-string');
 
-/* Constants. */
 var TAB = 0x09;
 var LF = 0x0A;
 var CR = 0x0D;
 
-/**
- * Replace tabs with spaces, being smart about which
- * column the tab is at and which size should be used.
- *
- * @param {string} value - Value with tabs.
- * @param {number?} [size=4] - Tab-size.
- * @return {string} - Value without tabs.
- */
+/* Replace tabs with spaces, being smart about which
+ * column the tab is at and which size should be used. */
 function detab(value, size) {
   var string = typeof value === 'string';
   var length = string && value.length;
