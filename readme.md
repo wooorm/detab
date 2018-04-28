@@ -13,11 +13,11 @@ npm install detab
 ## Usage
 
 ```javascript
-var detab = require('detab');
+var detab = require('detab')
 
-var four = detab('\tfoo\nbar\tbaz');
-var two = detab('\tfoo\nbar\tbaz', 2);
-var eight = detab('\tfoo\nbar\tbaz', 8);
+console.log(detab('\tfoo\nbar\tbaz'))
+console.log(detab('\tfoo\nbar\tbaz', 2))
+console.log(detab('\tfoo\nbar\tbaz', 8))
 ```
 
 Yields:
