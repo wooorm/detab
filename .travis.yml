@@ -1,10 +1,11 @@
 language: node_js
 node_js:
-- '4.0'
-- '8.0'
+- lts/boron
+- node
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: wVblKCinuFCKOJo4qwUOXjCxdLukfBZoax/FdVjSpGMYKSdE8Aw+WW1xCVIzv2qR5BnZPB2rjfrNQ2SubP5QMnLFWP/ENP2ez1bA9ezASIOzvJNrsApIDcUSc0GM3IcHH3reciQ5jf/n/MEw/jONnHYALm9V3w5f9mGrjO2hvzRrwtXgtz3D1PdV5s0CSza3gweqPrH05pe+4gMoZ5A688kQJQSA64wsZL9ulVo7Ovms9b8KPpq+crHCXCNMUtXNyTxAMDOQlNt5fbiPN0GjZ0uY287nXIhi7hyQt42jwclYOzd0ej3dy0Gzucn/yLscY5ftAyylSh6RbozPZFeJGMr2LF1ZukhdOgd4T9QzMgRtCjStwKvPtjFE1a8iuLPFHXOFSW3gGl/JEgAldS8DqhLufAd6irPAFOE5jG9ZOyi3UtAtc+4mYYc2FThhMsUctEjyleSQDA65sUnzsJNdpJ+Pq0wvd2SJzW8cSW+SY/fz862HvIMU/zbFNFk2FaM9UTFLTIapf4w9/pPqmuK062jhR7ntkdLgOv+XwWLi6Z5c+rv+fgnA6PIxZj5gauOLM603TL8TQY8Gf44YDVDlRgE/0FoBHeDaQzn6lFK6yuKZUiaZK+yTeFOS9YFX6d7nnxhXt9VgVNmdkV1dDvE7mJxue4O89m92J0DfGGXjH6g=
   file:
@@ -12,4 +13,3 @@ deploy:
     - "detab.min.js"
   on:
     tags: true
-    node: '8.0'
