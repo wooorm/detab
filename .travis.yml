@@ -4,19 +4,12 @@ node_js:
 - '8.0'
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
-  - provider: npm
-    email: tituswormer@gmail.com
-    api_key:
-      secure: EcanWsfZJVJasDYssswZ9MYu7HhEAmqgoNffGQazNwrENsJ+kXwFwSvMMaNz6LogdE1Oo3M4CpBqqFZoGb/Q8cjkMVuT7lh4NhrN3rUuMkXe0AJ4scH4ORurGt0yFr81vIKXCsF7xShrsBcXwkbCnq3sC4Q3S2hBzEz89rjJLsMJxrD6z3492vZSDemBhfXOL42dbJNCxNZ8QYSZSB8NfAglvPBdjVWzu4tPk3/9D46Pfbo9UfBOm5heSD5YzlrTaFQZ/tvuxDWLIgFr888w/myuVeH1hLcg3IORIKw7/Hvqipk4ESD0MCg9AIkJKeCPNCGmByFdTG3Sf3tqU0yTKEpchBtwdJa3AKgAP30rcIwZe8pdxWf86+hStqMzcUGYIdIY4L13Gh3oi/FgjLGAimUJzfYudtDhah6TXOfMBqkErW51m1qdW9lI23wHtTlaubVnkSUnYAKKRWPqCsa1wJ2bVdUz/qPRv/zgBb2IMALvw6XABZTM9dY6muB6h4swj3biSZFxWo8JeYUjRIqnTbeFDz5ZRdDRrH+0WlnZRuuJwcbNI/SQcKnqn/aEUm+EUS2yDM7+VfRV6qbFy5tq7u8/XYEV1lXvw8kbZ/ZOf0gLvvrL3UXXDm6xb5ZgPVzZTa/o9nkew5eSLi1/ETAKRoufL+yccf3GJJE+7dICHTk=
-    on:
-      tags: true
-      node: '8.0'
-  - provider: releases
-    api_key:
-      secure: wVblKCinuFCKOJo4qwUOXjCxdLukfBZoax/FdVjSpGMYKSdE8Aw+WW1xCVIzv2qR5BnZPB2rjfrNQ2SubP5QMnLFWP/ENP2ez1bA9ezASIOzvJNrsApIDcUSc0GM3IcHH3reciQ5jf/n/MEw/jONnHYALm9V3w5f9mGrjO2hvzRrwtXgtz3D1PdV5s0CSza3gweqPrH05pe+4gMoZ5A688kQJQSA64wsZL9ulVo7Ovms9b8KPpq+crHCXCNMUtXNyTxAMDOQlNt5fbiPN0GjZ0uY287nXIhi7hyQt42jwclYOzd0ej3dy0Gzucn/yLscY5ftAyylSh6RbozPZFeJGMr2LF1ZukhdOgd4T9QzMgRtCjStwKvPtjFE1a8iuLPFHXOFSW3gGl/JEgAldS8DqhLufAd6irPAFOE5jG9ZOyi3UtAtc+4mYYc2FThhMsUctEjyleSQDA65sUnzsJNdpJ+Pq0wvd2SJzW8cSW+SY/fz862HvIMU/zbFNFk2FaM9UTFLTIapf4w9/pPqmuK062jhR7ntkdLgOv+XwWLi6Z5c+rv+fgnA6PIxZj5gauOLM603TL8TQY8Gf44YDVDlRgE/0FoBHeDaQzn6lFK6yuKZUiaZK+yTeFOS9YFX6d7nnxhXt9VgVNmdkV1dDvE7mJxue4O89m92J0DfGGXjH6g=
-    file:
-      - "detab.js"
-      - "detab.min.js"
-    on:
-      tags: true
-      node: '8.0'
+  provider: releases
+  api_key:
+    secure: wVblKCinuFCKOJo4qwUOXjCxdLukfBZoax/FdVjSpGMYKSdE8Aw+WW1xCVIzv2qR5BnZPB2rjfrNQ2SubP5QMnLFWP/ENP2ez1bA9ezASIOzvJNrsApIDcUSc0GM3IcHH3reciQ5jf/n/MEw/jONnHYALm9V3w5f9mGrjO2hvzRrwtXgtz3D1PdV5s0CSza3gweqPrH05pe+4gMoZ5A688kQJQSA64wsZL9ulVo7Ovms9b8KPpq+crHCXCNMUtXNyTxAMDOQlNt5fbiPN0GjZ0uY287nXIhi7hyQt42jwclYOzd0ej3dy0Gzucn/yLscY5ftAyylSh6RbozPZFeJGMr2LF1ZukhdOgd4T9QzMgRtCjStwKvPtjFE1a8iuLPFHXOFSW3gGl/JEgAldS8DqhLufAd6irPAFOE5jG9ZOyi3UtAtc+4mYYc2FThhMsUctEjyleSQDA65sUnzsJNdpJ+Pq0wvd2SJzW8cSW+SY/fz862HvIMU/zbFNFk2FaM9UTFLTIapf4w9/pPqmuK062jhR7ntkdLgOv+XwWLi6Z5c+rv+fgnA6PIxZj5gauOLM603TL8TQY8Gf44YDVDlRgE/0FoBHeDaQzn6lFK6yuKZUiaZK+yTeFOS9YFX6d7nnxhXt9VgVNmdkV1dDvE7mJxue4O89m92J0DfGGXjH6g=
+  file:
+    - "detab.js"
+    - "detab.min.js"
+  on:
+    tags: true
+    node: '8.0'
