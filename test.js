@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tape');
-var detab = require('./');
+var detab = require('.');
 
 test('detab(value[, size])', function (t) {
   t.throws(
