@@ -60,6 +60,6 @@ column the tab is at and which `size` (`number`, default: `4`) should be used.
 
 [npm]: https://docs.npmjs.com/cli/install
 
-[license]: LICENSE
+[license]: license
 
 [author]: http://wooorm.com
