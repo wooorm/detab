@@ -29,7 +29,7 @@ function detab(value, size) {
     code = value.charCodeAt(index)
 
     if (code === TAB) {
-      add = tabSize - (column + 1) % tabSize
+      add = tabSize - ((column + 1) % tabSize)
       column += add
       results.push(value.slice(start, index) + repeat(' ', add))
       start = index + 1
