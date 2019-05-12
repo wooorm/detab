@@ -4,9 +4,9 @@ module.exports = detab
 
 var repeat = require('repeat-string')
 
-var TAB = 0x09
-var LF = 0x0a
-var CR = 0x0d
+var tab = 0x09
+var lineFeed = 0x0a
+var carriageReturn = 0x0d
 
 // Replace tabs with spaces, being smart about which column the tab is at and
 // which size should be used.
@@ -28,12 +28,12 @@ function detab(value, size) {
   while (++index < length) {
     code = value.charCodeAt(index)
 
-    if (code === TAB) {
+    if (code === tab) {
       add = tabSize - ((column + 1) % tabSize)
       column += add
       results.push(value.slice(start, index) + repeat(' ', add))
       start = index + 1
-    } else if (code === LF || code === CR) {
+    } else if (code === lineFeed || code === carriageReturn) {
       column = -1
     } else {
       column++
