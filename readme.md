@@ -1,4 +1,9 @@
-# detab [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# detab
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
 
 Detab: tabs → spaces.
 
@@ -50,13 +55,21 @@ column the tab is at and which `size` (`number`, default: `4`) should be used.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/detab.svg
+[build-badge]: https://img.shields.io/travis/wooorm/detab.svg
 
-[travis]: https://travis-ci.org/wooorm/detab
+[build]: https://travis-ci.org/wooorm/detab
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/detab.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/detab.svg
 
-[codecov]: https://codecov.io/github/wooorm/detab
+[coverage]: https://codecov.io/github/wooorm/detab
+
+[downloads-badge]: https://img.shields.io/npm/dm/detab.svg
+
+[downloads]: https://www.npmjs.com/package/detab
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/detab.svg
+
+[size]: https://bundlephobia.com/result?p=detab
 
 [npm]: https://docs.npmjs.com/cli/install
 
