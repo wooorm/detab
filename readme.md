@@ -62,4 +62,4 @@ column the tab is at and which `size` (`number`, default: `4`) should be used.
 
 [license]: license
 
-[author]: http://wooorm.com
+[author]: https://wooorm.com
