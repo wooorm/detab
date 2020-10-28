@@ -58,7 +58,10 @@
     "esnext": false,
     "ignores": [
       "detab.js"
-    ]
+    ],
+    "rules": {
+      "unicorn/prefer-type-error": "off"
+    }
   },
   "remarkConfig": {
     "plugins": [
