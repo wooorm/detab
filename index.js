@@ -8,8 +8,7 @@ var search = /[\t\n\r]/g
 
 // Replace tabs with spaces, being smart about which column the tab is at and
 // which size should be used.
-function detab(value, size) {
-  var tabSize = size || 4
+function detab(value, tabSize = 4) {
   var result = []
   var start = 0
   var index = 0
