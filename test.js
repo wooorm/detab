@@ -6,6 +6,7 @@ var own = {}.hasOwnProperty
 test('detab(value[, size])', function (t) {
   t.throws(
     function () {
+      // @ts-ignore runtime
       detab(true)
     },
     /detab expected string/,
