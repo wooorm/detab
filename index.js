@@ -1,14 +1,12 @@
 'use strict'
 
-module.exports = detab
-
-var repeat = require('repeat-string')
+import repeat from 'repeat-string'
 
 var search = /[\t\n\r]/g
 
 // Replace tabs with spaces, being smart about which column the tab is at and
 // which size should be used.
-function detab(value, tabSize = 4) {
+export function detab(value, tabSize = 4) {
   var result = []
   var start = 0
   var index = 0
@@ -18,7 +16,7 @@ function detab(value, tabSize = 4) {
   var end
 
   if (typeof value !== 'string') {
-    throw new Error('detab expected string')
+    throw new TypeError('detab expected string')
   }
 
   while (index < value.length) {

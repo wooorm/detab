@@ -9,6 +9,9 @@ Detab: tabs → spaces.
 
 ## Install
 
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -18,7 +21,7 @@ npm install detab
 ## Use
 
 ```js
-var detab = require('detab')
+import {detab} from 'detab'
 
 console.log(detab('\tfoo\nbar\tbaz'))
 console.log(detab('\tfoo\nbar\tbaz', 2))
@@ -27,22 +30,25 @@ console.log(detab('\tfoo\nbar\tbaz', 8))
 
 Yields:
 
-```text
+```txt
     foo
 bar baz
 ```
 
-```text
+```txt
   foo
 bar baz
 ```
 
-```text
+```txt
         foo
 bar     baz
 ```
 
 ## API
+
+This package exports the following identifiers: `detab`.
+There is no default export.
 
 ### `detab(value[, size=4])`
 

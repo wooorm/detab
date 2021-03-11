@@ -1,7 +1,5 @@
-'use strict'
-
-var test = require('tape')
-var detab = require('.')
+import test from 'tape'
+import {detab} from './index.js'
 
 var own = {}.hasOwnProperty
 
