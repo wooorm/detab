@@ -55,9 +55,9 @@ the tab is at and which `size` (`number`, default: `4`) should be used.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/detab.svg
+[build-badge]: https://github.com/wooorm/detab/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/wooorm/detab
+[build]: https://github.com/wooorm/detab/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/detab.svg
 
