@@ -1,11 +1,11 @@
 import test from 'tape'
 import {detab} from './index.js'
 
-var own = {}.hasOwnProperty
+const own = {}.hasOwnProperty
 
-test('detab(value[, size])', function (t) {
+test('detab(value[, size])', (t) => {
   t.throws(
-    function () {
+    () => {
       // @ts-ignore runtime
       detab(true)
     },
@@ -13,7 +13,7 @@ test('detab(value[, size])', function (t) {
     'should throw when not given a string'
   )
 
-  t.test('should work', function (st) {
+  t.test('should work', (st) => {
     st.equal(detab('foo\tbar'), 'foo bar')
     st.equal(detab('fo\tbar'), 'fo  bar')
     st.equal(detab('f\tbar'), 'f   bar')
@@ -24,20 +24,20 @@ test('detab(value[, size])', function (t) {
     st.end()
   })
 
-  t.test('should support lines', function (st) {
-    var map = {
+  t.test('should support lines', (st) => {
+    const map = {
       LF: '\n',
       CR: '\r',
       'CR+LF': '\r\n'
     }
-    var key
-    var chars
+    let key
+    let chars
 
     for (key in map) {
       if (own.call(map, key)) {
         chars = map[key]
 
-        st.test(key, function (sst) {
+        st.test(key, (sst) => {
           sst.equal(detab('foo' + chars + '\tbar'), 'foo' + chars + '    bar')
           sst.equal(detab('fo' + chars + '\tbar'), 'fo' + chars + '    bar')
           sst.equal(detab('f' + chars + '\tbar'), 'f' + chars + '    bar')

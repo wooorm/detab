@@ -2,7 +2,7 @@
 
 import repeat from 'repeat-string'
 
-var search = /[\t\n\r]/g
+const search = /[\t\n\r]/g
 
 /***
  * Replace tabs with spaces, being smart about which column the tab is at and
@@ -13,13 +13,10 @@ var search = /[\t\n\r]/g
  * @returns {string} Value with spaces
  */
 export function detab(value, tabSize = 4) {
-  var result = []
-  var start = 0
-  var index = 0
-  var column = -1
-  var add
-  var match
-  var end
+  const result = []
+  let start = 0
+  let index = 0
+  let column = -1
 
   if (typeof value !== 'string') {
     throw new TypeError('detab expected string')
@@ -27,11 +24,11 @@ export function detab(value, tabSize = 4) {
 
   while (index < value.length) {
     search.lastIndex = index
-    match = search.exec(value)
-    end = match ? match.index : value.length
+    const match = search.exec(value)
+    const end = match ? match.index : value.length
 
     if (value.charCodeAt(end) === 9) {
-      add = tabSize - ((column + end - index + 1) % tabSize)
+      const add = tabSize - ((column + end - index + 1) % tabSize)
       result.push(value.slice(start, end), repeat(' ', add))
       column += end - index + add
       start = end + 1
