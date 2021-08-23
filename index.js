@@ -1,5 +1,3 @@
-import repeat from 'repeat-string'
-
 const search = /[\t\n\r]/g
 
 /***
@@ -28,7 +26,7 @@ export function detab(value, tabSize = 4) {
 
     if (value.charCodeAt(end) === 9) {
       const add = tabSize - ((column + end - index + 1) % tabSize)
-      result.push(value.slice(start, end), repeat(' ', add))
+      result.push(value.slice(start, end), ' '.repeat(add))
       column += end - index + add
       start = end + 1
     } else {

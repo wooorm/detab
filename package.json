@@ -28,9 +28,7 @@
     "index.d.ts",
     "index.js"
   ],
-  "dependencies": {
-    "repeat-string": "^1.6.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/tape": "^4.0.0",
     "c8": "^7.0.0",
