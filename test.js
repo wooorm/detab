@@ -30,12 +30,12 @@ test('detab(value[, size])', (t) => {
       CR: '\r',
       'CR+LF': '\r\n'
     }
+    /** @type {keyof map} */
     let key
-    let chars
 
     for (key in map) {
       if (own.call(map, key)) {
-        chars = map[key]
+        const chars = map[key]
 
         st.test(key, (sst) => {
           sst.equal(detab('foo' + chars + '\tbar'), 'foo' + chars + '    bar')

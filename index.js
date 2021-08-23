@@ -1,5 +1,3 @@
-'use strict'
-
 import repeat from 'repeat-string'
 
 const search = /[\t\n\r]/g
@@ -13,6 +11,7 @@ const search = /[\t\n\r]/g
  * @returns {string} Value with spaces
  */
 export function detab(value, tabSize = 4) {
+  /** @type {string[]} */
   const result = []
   let start = 0
   let index = 0
