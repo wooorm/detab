@@ -24,7 +24,7 @@ export function detab(value, tabSize = 4) {
     const match = search.exec(value)
     const end = match ? match.index : value.length
 
-    if (value.charCodeAt(end) === 9) {
+    if (value.codePointAt(end) === 9) {
       const add = tabSize - ((column + end - index + 1) % tabSize)
       result.push(value.slice(start, end), ' '.repeat(add))
       column += end - index + add
