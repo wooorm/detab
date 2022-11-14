@@ -4,12 +4,15 @@ const search = /[\t\n\r]/g
  * Replace tabs with spaces, being smart about which column the tab is at and
  * which size should be used.
  *
- * @param {string} value Value with tabs
- * @param {number} [tabSize=4] Tab size
- * @returns {string} Value with spaces
+ * @param {string} value
+ *   Value with tabs.
+ * @param {number} [tabSize=4]
+ *   Tab size.
+ * @returns {string}
+ *   Value with spaces.
  */
 export function detab(value, tabSize = 4) {
-  /** @type {string[]} */
+  /** @type {Array<string>} */
   const result = []
   let start = 0
   let index = 0
